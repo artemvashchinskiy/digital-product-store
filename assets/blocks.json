@@ -1,0 +1,56 @@
+[
+  {
+    "title": "Hero Block",
+    "description": "Clean minimal header section",
+    "image": "/assets/img/gallery/block1.png",
+    "featured": true
+  },
+  {
+    "title": "Card Section",
+    "description": "Simple 3-card layout",
+    "image": "/assets/img/gallery/block2.png",
+    "featured": true
+  },
+  {
+    "title": "Navigation",
+    "description": "Minimal responsive navbar",
+    "image": "/assets/img/gallery/block3.png",
+    "featured": true
+  },
+  {
+    "title": "Footer Block",
+    "description": "Clean minimal footer layout",
+    "image": "/assets/img/gallery/block4.png",
+    "featured": true
+  },
+  {
+    "title": "Pricing Table",
+    "description": "Simple 3-tier pricing section",
+    "image": "/assets/img/gallery/block5.png",
+    "featured": true
+  },
+  {
+    "title": "Testimonials",
+    "description": "Minimal testimonial cards",
+    "image": "/assets/img/gallery/block6.png",
+    "featured": true
+  },
+  {
+    "title": "Contact Form",
+    "description": "Small minimal contact form",
+    "image": "/assets/img/gallery/block7.png",
+    "featured": false
+  },
+  {
+    "title": "Newsletter Signup",
+    "description": "Modern subscribe form",
+    "image": "/assets/img/gallery/block8.png",
+    "featured": false
+  },
+  {
+    "title": "FAQ Section",
+    "description": "Minimal accordion FAQ",
+    "image": "/assets/img/gallery/block9.png",
+    "featured": false
+  }
+]

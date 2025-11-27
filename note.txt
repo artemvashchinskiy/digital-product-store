@@ -1,0 +1,36 @@
+/index.html
+/blocks/nav.html
+/blocks/hero.html
+/blocks/slider.html
+/blocks/gallery.html
+/blocks/store.html
+/blocks/get-your-block.html 
+/blocks/footer.html
+/js/nav.js
+/js/slider.js
+/js/gallery.js
+/js/theme.js
+/js/loadComponents.js
+/assets/:{
+    blocks.json
+	free-block:{
+		img:{
+			free.png
+		}
+		free-card.html
+		free-ui-card.zip
+	}
+    img/:{
+        gallery/:{
+            block1.png...++
+        }
+        store/:{
+            block1.png...++
+        }
+	free/:{...++}
+    }
+    
+}
+
+
+
