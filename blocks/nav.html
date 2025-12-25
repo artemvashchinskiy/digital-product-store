@@ -2,7 +2,7 @@
   <div class="container mx-auto px-6 py-4 flex items-center justify-between">
 
     <!-- LEFT: Logo -->
-    <a href="/" class="text-xl font-semibold tracking-wide">
+    <a href="index.html" class="text-xl font-semibold tracking-wide">
       UI Blocks
     </a>
 
@@ -15,35 +15,38 @@
 
     <!-- Desktop nav -->
     <div class="hidden flex items-center gap-6 md:flex text-base">
-      <a href="#hero">Home</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#store">Store</a>
-      <a href="#store">Get Your Block</a>
+      <a data-link="hero" href="#hero">Home</a>
+      <a data-link="gallery" href="#gallery">Gallery</a>
+      <a href="pages/store-page.html">Store</a>
+      <a data-link="store" href="#store">Get Your Block</a>
       <a
+        data-link="free"
         href="#get-your-block"
         class="inline-flex items-center rounded-md bg-gray-900 text-white text-sm font-medium px-4 py-2 hover:bg-black"
       >
         Get Free Block
       </a>
     </div>
- 
+
   </div>
 
   <!-- MOBILE MENU (slide from left) -->
   <div id="mobileMenu"
        class="fixed top-0 left-0 h-full w-64 bg-white shadow-xl transform -translate-x-full transition-transform duration-300 md:hidden z-50 flex flex-col p-6 gap-6 text-lg">
-    <a href="#hero" class="border-b pb-2">Home</a>
-    <a href="#gallery" class="border-b pb-2">Gallery</a>
-    <a href="#store" class="border-b pb-2">Store</a>
-    <a href="#store" class="border-b pb-2">Get Your Block</a>
+
+    <a data-link="hero" href="#hero" class="border-b pb-2">Home</a>
+    <a data-link="gallery" href="#gallery" class="border-b pb-2">Gallery</a>
+    <a href="pages/store-page.html" class="border-b pb-2">Store</a>
+    <a data-link="store" href="#store" class="border-b pb-2">Get Your Block</a>
     <a
+      data-link="free"
       href="#get-your-block"
       class="inline-flex items-center rounded-md bg-gray-900 text-white text-sm font-medium px-4 py-2 hover:bg-black"
     >
       Get Free Block
     </a>
   </div>
-</nav> 
+</nav>
 
 
 

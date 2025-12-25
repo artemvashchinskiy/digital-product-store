@@ -1,0 +1,39 @@
+<div id="productContent" class="w-full py-20">
+  <div class="max-w-5xl mx-auto px-6 lg:px-8">
+
+    <!-- Hero section -->
+    <div id="productHero" class="text-center mb-12">
+      <h1 class="text-4xl font-bold mb-4" id="productTitle"></h1>
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto" id="productShort"></p>
+    </div>
+
+    <!-- Image gallery -->
+    <div id="productImages" class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-16"></div>
+
+    <!-- Description -->
+    <div class="mb-16">
+      <h2 class="text-2xl font-bold mb-4">What's inside:</h2>
+      <ul id="productDescription" class="list-disc pl-6 text-gray-700 space-y-2"></ul>
+    </div>
+
+    <!-- Buy button -->
+    <div class="text-center">
+      <a id="productBuyBtn"
+         target="_blank"
+         class="inline-flex items-center rounded-md bg-gray-900 text-white px-6 py-3 text-lg font-medium hover:bg-black">
+        Buy Now
+      </a>
+    </div>
+
+  </div>
+</div>
+
+<div class="bg-white shadow-sm rounded-xl p-6 hover:shadow-md transition">
+  <img src="{{img}}" class="rounded-md mb-4" alt="">
+  <h3 class="text-xl font-semibold mb-2">{{title}}</h3>
+  <p class="text-gray-600 mb-4">{{desc}}</p>
+  <a href="{{download}}" target="_blank"
+     class="inline-flex items-center rounded-md bg-gray-900 text-white px-4 py-2 text-sm hover:bg-black">
+    Download
+  </a>
+</div>

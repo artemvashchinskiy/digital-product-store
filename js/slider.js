@@ -1,40 +1,66 @@
-const slides = [
-  { title: "Hero Block", image: "/assets/img/gallery/block1.png" },
-  { title: "Card Section", image: "/assets/img/gallery/block2.png" },
-  { title: "Navigation", image: "/assets/img/gallery/block3.png" },
-  { title: "Footer Block", image: "/assets/img/gallery/block4.png" },
-];
-
+let slides = [];
 let currentIndex = 0;
 let sliderTrack, dots, labelBox;
 let autoplayInterval;
 
+/* =========================
+   LOAD FEATURED SLIDES
+========================= */
+async function loadFeaturedSlides() {
+  try {
+    const res = await fetch("/data/blocks.json");
+    const data = await res.json();
+
+    slides = data
+      .filter(item => item.featured === true)
+      .map(item => ({
+        title: item.title,
+        image: item.image,
+        demo: item.demo || "#",
+        price: item.price || "Free"
+      }));
+
+    if (!slides.length) return;
+
+    initSlider();
+  } catch (err) {
+    console.error("Slider JSON load error:", err);
+  }
+}
+
+/* =========================
+   INIT SLIDER
+========================= */
 function initSlider() {
   sliderTrack = document.getElementById("slider-track");
   dots = document.getElementById("slider-dots");
   labelBox = document.getElementById("slider-labels");
 
+  sliderTrack.innerHTML = "";
+  dots.innerHTML = "";
+
   slides.forEach((slide, index) => {
     const slideEl = document.createElement("div");
 
-    // EXACT hero preview proportions and behavior
     slideEl.className = `
-      flex-shrink-0 w-full relative
-      px-6 py-6
+      flex-shrink-0 w-full relative px-6 py-6
     `;
 
     slideEl.innerHTML = `
-      <div class="h-56 sm:h-72 md:h-80 bg-gradient-to-br from-gray-100 to-gray-50
-                  flex items-center justify-center rounded-xl overflow-hidden">
+      <a href="${slide.demo}"
+         class="block h-56 sm:h-72 md:h-80 bg-gradient-to-br from-gray-100 to-gray-50
+                flex items-center justify-center rounded-xl overflow-hidden
+                hover:scale-[1.02] transition">
         <img src="${slide.image}"
              alt="${slide.title}"
+             loading="lazy"
              class="max-h-full object-contain opacity-90" />
-      </div>
+      </a>
     `;
 
     sliderTrack.appendChild(slideEl);
 
-    // DOTS
+    // dots
     const dot = document.createElement("button");
     dot.className = "w-3 h-3 rounded-full bg-gray-300";
     dot.addEventListener("click", () => goToSlide(index));
@@ -43,31 +69,33 @@ function initSlider() {
 
   updateSlider();
 
-  // Controls
-  document.getElementById("prev-slide").addEventListener("click", prevSlide);
-  document.getElementById("next-slide").addEventListener("click", nextSlide);
+  document.getElementById("prev-slide")?.addEventListener("click", prevSlide);
+  document.getElementById("next-slide")?.addEventListener("click", nextSlide);
 
-  // Autoplay for mobile
+  // autoplay (mobile only)
   if (window.innerWidth < 768) {
     autoplayInterval = setInterval(nextSlide, 3500);
-    sliderTrack.parentElement.addEventListener("mouseenter", () => clearInterval(autoplayInterval));
-    sliderTrack.parentElement.addEventListener("mouseleave", () => autoplayInterval = setInterval(nextSlide, 3500));
+
+    const wrapper = sliderTrack.parentElement;
+    wrapper.addEventListener("mouseenter", stopAutoplay);
+    wrapper.addEventListener("mouseleave", startAutoplay);
   }
 }
 
+/* =========================
+   SLIDER LOGIC
+========================= */
 function updateSlider() {
   sliderTrack.style.transform = `translateX(-${currentIndex * 100}%)`;
 
-  // Dots active state
-  Array.from(dots.children).forEach((dot, i) => {
+  [...dots.children].forEach((dot, i) => {
     dot.classList.toggle("bg-gray-900", i === currentIndex);
     dot.classList.toggle("bg-gray-300", i !== currentIndex);
   });
 
-  // Preview label (same as hero card)
   labelBox.innerHTML = `
     <span>${slides[currentIndex].title}</span>
-    <span>PNG preview</span>
+    <span class="text-xs text-gray-500">${slides[currentIndex].price}</span>
   `;
 }
 
@@ -85,3 +113,31 @@ function goToSlide(i) {
   currentIndex = i;
   updateSlider();
 }
+
+function stopAutoplay() {
+  if (autoplayInterval) clearInterval(autoplayInterval);
+}
+
+function startAutoplay() {
+  stopAutoplay();
+  autoplayInterval = setInterval(nextSlide, 3500);
+}
+
+/* =========================
+   WAIT FOR BLOCK INJECTION
+========================= */
+const sliderObserver = new MutationObserver(() => {
+  if (
+    document.getElementById("slider-track") &&
+    document.getElementById("slider-dots") &&
+    document.getElementById("slider-labels")
+  ) {
+    sliderObserver.disconnect();
+    loadFeaturedSlides();
+  }
+});
+
+sliderObserver.observe(document.body, {
+  childList: true,
+  subtree: true
+});

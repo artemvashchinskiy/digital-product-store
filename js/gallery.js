@@ -1,11 +1,9 @@
-document.addEventListener("DOMContentLoaded", initGallery);
-
 function initGallery() {
   const container = document.querySelector("#galleryGrid");
   const btn = document.querySelector("#galleryToggleBtn");
   if (!container || !btn) return;
 
-  fetch("/assets/blocks.json")
+  fetch("data/blocks.json")
     .then(res => res.json())
     .then(blocks => {
       // First show only 3 blocks
@@ -43,3 +41,16 @@ function renderBlocks(blocks, limit) {
     `)
     .join("");
 }
+
+// Wait until the gallery block has been injected, then initialize
+const galleryObserver = new MutationObserver(() => {
+  const container = document.querySelector("#galleryGrid");
+  const btn = document.querySelector("#galleryToggleBtn");
+
+  if (container && btn) {
+    galleryObserver.disconnect();
+    initGallery();
+  }
+});
+
+galleryObserver.observe(document.body, { childList: true, subtree: true });

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile Card</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+      body {
+        background-image: url("./components/background.png");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+    </style>
+  </head>
+
+  <body class="min-h-screen flex items-center justify-center">
+    <!-- CARD START -->
+    <div
+      class="
+        w-[90vw]
+        max-w-[625px]
+        min-h-[550px]
+        lg:w-[625px]
+        lg:h-[785px]
+
+        bg-[rgba(217,217,217,0.10)]
+        backdrop-blur-[20px]
+        border-2 border-white/20
+        rounded-[20px]
+
+        flex flex-col items-center
+
+        mt-[80px]
+        mb-[80px]
+        lg:mt-[150px]
+        lg:mb-[100px]
+
+        px-[16px]
+        sm:px-[24px]
+        lg:px-0
+      "
+    >
+      <!-- Avatar -->
+      <img
+        src="./components/Profile-pic.png"
+        alt="John Smith avatar"
+        width="205"
+        height="205"
+        class="
+          rounded-full
+          mt-[40px]
+          sm:mt-[50px]
+          lg:mt-[60px]
+
+          w-[140px]
+          h-[140px]
+          sm:w-[170px]
+          sm:h-[170px]
+          lg:w-[205px]
+          lg:h-[205px]
+
+          [mask-image:radial-gradient(circle,black_60%,transparent_100%)]
+        "
+      />
+
+      <!-- Text -->
+      <div class="text-center mt-[32px] sm:mt-[40px] lg:mt-[50px] px-[10px] sm:px-[40px]">
+        <h1 class="text-white font-medium text-[36px] sm:text-[48px] lg:text-[64px] leading-[1.1]">
+          John Smith
+        </h1>
+
+        <p class="text-white font-medium text-[16px] sm:text-[20px] lg:text-[25px] mt-[12px] sm:mt-[14px] lg:mt-[16px]">
+          I’m student of IIT Bombay and I like to design website
+        </p>
+      </div>
+
+      <!-- Socials -->
+      <ul class="flex gap-[12px] sm:gap-[14px] lg:gap-[16px] mt-[28px] sm:mt-[32px] lg:mt-[35px]">
+        <li class="w-[40px] h-[40px] sm:w-[45px] sm:h-[45px] lg:w-[50px] lg:h-[50px] rounded-full bg-[rgba(217,217,217,0.5)] flex items-center justify-center">
+          <a href="https://fb.com" aria-label="Facebook" target="_blank">
+            <img src="./components/Facebook.png" alt="Facebook" class="w-[35px] h-[35px] sm:w-[40px] sm:h-[40px] lg:w-[45px] lg:h-[45px]" />
+          </a>
+        </li>
+
+        <li class="w-[40px] h-[40px] sm:w-[45px] sm:h-[45px] lg:w-[50px] lg:h-[50px] rounded-full bg-[rgba(217,217,217,0.5)] flex items-center justify-center">
+          <a href="https://x.com" aria-label="Twitter" target="_blank">
+            <img src="./components/Twitter.png" alt="Twitter" class="w-[35px] h-[35px] sm:w-[40px] sm:h-[40px] lg:w-[45px] lg:h-[45px]" />
+          </a>
+        </li>
+
+        <li class="w-[40px] h-[40px] sm:w-[45px] sm:h-[45px] lg:w-[50px] lg:h-[50px] rounded-full bg-[rgba(217,217,217,0.5)] flex items-center justify-center">
+          <a href="https://www.whatsapp.com/?lang=uk" aria-label="Telegram" target="_blank">
+            <img src="./components/Telegram.png" alt="Telegram" class="w-[35px] h-[35px] sm:w-[40px] sm:h-[40px] lg:w-[45px] lg:h-[45px]" />
+          </a>
+        </li>
+      </ul>
+
+      <!-- CTA -->
+      <a
+        href="https://t.me/username"
+        target="_blank"
+        class="
+          mt-[40px]
+          sm:mt-[50px]
+          lg:mt-[60px]
+
+          mb-[20px]
+          sm:mb-[50px]
+          lg:mb-[40px]
+
+          w-full
+          max-w-[260px]
+          sm:max-w-[280px]
+          lg:w-[300px]
+
+          h-[56px]
+          lg:h-[70px]
+
+          border-2
+          border-dashed
+          border-[#C83BAE]
+          bg-[rgba(255,255,255,0.7)]
+          rounded-[14px]
+
+          flex items-center justify-center
+
+          text-[#C83BAE]
+          font-medium
+          text-[18px]
+          sm:text-[22px]
+          lg:text-[25px]
+
+          hover:bg-[rgba(200,59,174,0.10)]
+          transition
+        "
+      >
+        Message me
+      </a>
+    </div>
+    <!-- CARD END -->
+  </body>
+</html>

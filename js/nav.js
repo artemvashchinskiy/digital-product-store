@@ -1,4 +1,44 @@
-// Wait until nav gets inserted dynamically
+// ----------------------------
+// 1) Fix section links on non-index pages
+// ----------------------------
+function fixLinksForSubpages() {
+  const path = window.location.pathname || "";
+  const isIndex =
+    path === "/" ||
+    path === "" ||
+    path.endsWith("index.html");
+  const isInPages = path.includes("/pages/");
+
+  document.querySelectorAll("[data-link]").forEach(link => {
+    const id = link.dataset.link;
+
+    if (!isIndex) {
+      const prefix = isInPages ? "../" : "";
+      link.href = `${prefix}index.html#${id === "free" ? "get-your-block" : id}`;
+    }
+  });
+
+  // Fix logo link on subpages
+  if (!isIndex) {
+    const logo = document.querySelector('a[href="index.html"], a[href="/"]');
+    if (logo) {
+      const prefix = isInPages ? "../" : "";
+      logo.href = `${prefix}index.html`;
+    }
+  }
+
+  // Fix "Store" links on subpages so they always point to /pages/store-page.html
+  document.querySelectorAll('a[href$="store-page.html"]').forEach(link => {
+    if (!isIndex) {
+      const prefix = isInPages ? "../" : "";
+      link.href = `${prefix}pages/store-page.html`;
+    }
+  });
+}
+
+// ----------------------------
+// 2) Mobile nav init (your exact code)
+// ----------------------------
 const initMobileNav = () => {
   const btn = document.querySelector('#burgerBtn');
   const menu = document.querySelector('#mobileMenu');
@@ -19,39 +59,33 @@ const initMobileNav = () => {
     isOpen = false;
   };
 
-  // Toggle on burger
   btn.addEventListener("click", (e) => {
     e.stopPropagation();
     isOpen ? closeMenu() : openMenu();
   });
 
-  // Close when clicking outside menu
   document.addEventListener("click", (e) => {
     if (isOpen && !menu.contains(e.target) && !btn.contains(e.target)) {
       closeMenu();
     }
   });
 
-  // Close when clicking a link inside menu
   menu.querySelectorAll("a").forEach(link => {
-    link.addEventListener("click", () => {
-      closeMenu();
-    });
+    link.addEventListener("click", () => closeMenu());
   });
 
   observer.disconnect();
 };
 
-// Mutation observer — waits until #burgerBtn appears
+// ----------------------------
+// 3) MutationObserver to wait for nav
+// ----------------------------
 const observer = new MutationObserver(() => {
   const btn = document.querySelector('#burgerBtn');
-  if (btn) initMobileNav();
+  if (btn) {
+    fixLinksForSubpages();
+    initMobileNav();
+  }
 });
 
 observer.observe(document.body, { childList: true, subtree: true });
-
-
-
-
-
-

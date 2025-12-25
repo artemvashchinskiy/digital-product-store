@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Block Details</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-white">
+
+  <!-- Nav auto-loaded -->
+  <div id="nav"></div>
+
+  <!-- Product content injected here -->
+  <section id="content" class="max-w-5xl mx-auto px-6 py-16">
+    <h1 class="text-3xl font-bold">Loading...</h1>
+  </section>
+
+  <!-- Footer auto-loaded -->
+  <div id="footer"></div>
+
+  <!-- GLOBAL LOADER -->
+  <script type="module" src="/js/loadComponents.js"></script>
+
+  <!-- Nav + mobile menu behavior -->
+  <script src="/js/nav.js"></script>
+
+  <!-- BLOCK DETAILS LOGIC -->
+  <script type="module" src="/js/product-page.js"></script>
+
+</body>
+</html>

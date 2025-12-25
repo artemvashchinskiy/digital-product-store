@@ -1,18 +1,26 @@
 /index.html
-/blocks/nav.html
-/blocks/hero.html
-/blocks/slider.html
-/blocks/gallery.html
-/blocks/store.html
-/blocks/get-your-block.html 
-/blocks/footer.html
-/js/nav.js
-/js/slider.js
-/js/gallery.js
-/js/theme.js
-/js/loadComponents.js
-/assets/:{
-    blocks.json
+pages/
+    product-page.html
+    store-page.html  
+blocks/
+    nav.html
+    hero.html
+    slider.html
+    gallery.html
+    store.html
+    get-your-block.html 
+    footer.html
+data/ 
+    blocks.json (here top data for index.html landing) 
+js/
+    product-page.js
+    store-page.js 
+    store.js
+    nav.js
+    slider.js
+    gallery.js 
+    loadComponents.js   
+/assets/:{ 
 	free-block:{
 		img:{
 			free.png
@@ -32,5 +40,6 @@
     
 }
 
+note.txt
 
 

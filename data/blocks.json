@@ -1,0 +1,132 @@
+[
+  {
+    "id": "hero-block",
+    "title": "Hero Block",
+    "description": "Clean minimal header section",
+    "image": "/assets/img/gallery/block1.png",
+    "featured": false,
+    "price": "Free",
+    "files": "/assets/free-block/free-ui-card.zip",
+    "type": "hero",
+    "tags": ["header", "landing"],
+    "demo": "/demos/hero.html"
+  },
+  {
+  "id": "violet-profile-card",
+  "title": "Profile Card",
+  "description": "Glassmorphism profile card with avatar, socials and CTA",
+  "image": "/assets/img/gallery/violet-profile-card.png",
+  "featured": true,
+  "price": "Free", 
+  "type": "card",
+  "tags": ["profile", "card", "glassmorphism", "social"],
+  "demo": "/demos/violet-profile-card/index.html"
+  },
+  {
+  "id": "blue-dashboard-ui",
+  "title": "Dashboard UI",
+  "description": "Glassmorphism dashboard with sidebar profile and progress cards",
+  "image": "/assets/img/gallery/blue-dashboard-ui.png",
+  "featured": true,   
+  "price": "Free",
+  "type": "dashboard",
+  "tags": ["dashboard", "stats", "glassmorphism", "layout"],
+  "demo": "/demos/blue-dashboard-ui/index.html"
+  },
+  {
+    "id": "card-section",
+    "title": "Card Section",
+    "description": "Simple 3-card layout",
+    "image": "/assets/img/gallery/block2.png",
+    "featured": true,
+    "price": "$5",
+    "files": "/assets/free-block/free-ui-card.zip",
+    "type": "cards",
+    "tags": ["cards", "grid"],
+    "demo": "/demos/card-section.html"
+  },
+  {
+    "id": "navigation",
+    "title": "Navigation",
+    "description": "Minimal responsive navbar",
+    "image": "/assets/img/gallery/block3.png",
+    "featured": false,
+    "price": "Free",
+    "files": "/assets/free-block/free-ui-card.zip",
+    "type": "layout",
+    "tags": ["nav", "ui"],
+    "demo": "/demos/navigation.html"
+  },
+  {
+    "id": "footer-block",
+    "title": "Footer Block",
+    "description": "Clean minimal footer layout",
+    "image": "/assets/img/gallery/block4.png",
+    "featured": false,
+    "price": "Free",
+    "files": "/assets/free-block/free-ui-card.zip",
+    "type": "layout",
+    "tags": ["footer", "layout"],
+    "demo": "/demos/footer.html"
+  },
+  {
+    "id": "pricing-table",
+       "title": "Pricing Table",
+    "description": "Simple 3-tier pricing section",
+    "image": "/assets/img/gallery/block5.png",
+    "featured": false,
+    "price": "$7",
+    "files": "/assets/free-block/free-ui-card.zip",
+    "type": "pricing",
+    "tags": ["pricing"],
+    "demo": "/demos/pricing.html"
+  },
+  {
+    "id": "testimonials",
+    "title": "Testimonials",
+    "description": "Minimal testimonial cards",
+    "image": "/assets/img/gallery/block6.png",
+    "featured": false,
+    "price": "Free",
+    "files": "/assets/free-block/free-ui-card.zip",
+    "type": "cards",
+    "tags": ["testimonials"],
+    "demo": "/demos/testimonials.html"
+  },
+  {
+    "id": "contact-form",
+    "title": "Contact Form",
+    "description": "Small minimal contact form",
+    "image": "/assets/img/gallery/block7.png",
+    "featured": false,
+    "price": "$3",
+    "files": "/assets/free-block/free-ui-card.zip",
+    "type": "form",
+    "tags": ["form"],
+    "demo": "/demos/contact.html"
+  },
+  {
+    "id": "newsletter-signup",
+    "title": "Newsletter Signup",
+    "description": "Modern subscribe form",
+    "image": "/assets/img/gallery/block8.png",
+    "featured": false,
+    "price": "$3",
+    "files": "/assets/free-block/free-ui-card.zip",
+    "type": "form",
+    "tags": ["newsletter"],
+    "demo": "/demos/newsletter.html"
+  },
+  {
+    "id": "faq-section",
+    "title": "FAQ Section",
+    "description": "Minimal accordion FAQ",
+    "image": "/assets/img/gallery/block9.png",
+    "featured": false,
+    "price": "$4",
+    "files": "/assets/free-block/free-ui-card.zip",
+    "type": "faq",
+    "tags": ["accordion", "faq"],
+    "demo": "/demos/faq.html"
+  }
+]
